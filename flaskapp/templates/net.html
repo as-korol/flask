@@ -1,0 +1,20 @@
+{% extends "bootstrap/base.html" %}
+{% import "bootstrap/wtf.html" as wtf %}
+{% block head %}
+<link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+{% endblock %}
+{% block title %}Классификация изображений{% endblock %}
+{% block content %}
+<div class="container">
+  {{ wtf.quick_form(form, method='post', enctype="multipart/form-data") }}
+  {% if neurodic %}
+  <h2>Результаты:</h2>
+  <ul>
+    {% for label, prob in neurodic.items() %}
+    <li>{{ label }}: {{ prob }}</li>
+    {% endfor %}
+  </ul>
+  <img src="{{ url_for('static', filename=image_name) }}" width="200">
+  {% endif %}
+</div>
+{% endblock %}

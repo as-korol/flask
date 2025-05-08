@@ -1,10 +1,13 @@
 language: python
 python:
   - "3.11"
+
 before_install:
-  - chmod +x flaskapp/st.sh
+  - chmod +x ./flaskapp/st.sh
+
 install:
-  - pip install Flask gunicorn requests
+  - pip install -r requirements.txt
+
 script:
   - cd flaskapp
   - ./st.sh

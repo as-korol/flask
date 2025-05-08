@@ -1,0 +1,40 @@
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>Регулировка яркости</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+
+<body>
+    <div class="container">
+        <h1>Регулировка яркости</h1>
+        <form method="post" enctype="multipart/form-data">
+            {{ form.hidden_tag() }}
+            <div>
+                {{ form.image.label }}<br>
+                {{ form.image() }}
+            </div>
+            <div>
+                {{ form.level.label }}<br>
+                <input type="range" id="level" name="level" min="0.1" max="3.0" step="0.1"
+                    value="{{ form.level.data or 1.0 }}" oninput="this.nextElementSibling.value = this.value">
+                <output>{{ form.level.data or 1.0 }}</output>
+            </div>
+            <div>{{ form.recaptcha() }}</div>
+            <div>{{ form.submit(class="btn") }}</div>
+        </form>
+
+        {% if orig %}
+        <h2>Оригинал:</h2>
+        <img src="{{ url_for('uploaded_file', filename=orig) }}">
+        <h2>Результат:</h2>
+        <img src="{{ url_for('output_file', filename=out) }}">
+        <h3>Гистограммы:</h3>
+        <img src="{{ url_for('output_file', filename=hist_in) }}">
+        <img src="{{ url_for('output_file', filename=hist_out) }}">
+        {% endif %}
+    </div>
+</body>
+
+</html>

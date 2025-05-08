@@ -1,0 +1,27 @@
+<html>
+
+<head>
+    <title>{{ some_str or 'Главная' }}</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+
+<body>
+    <div class="container">
+        <h1>{{ some_str or 'Задания лабораторной работы №1' }}</h1>
+        {% if links %}
+        <ul class="nav-list">
+            {% for text, url in links %}
+            <li><a href="{{ url }}">{{ text }}</a></li>
+            {% endfor %}
+        </ul>
+        {% endif %}
+        {% if some_value is defined %}
+        <p>some_value: {{ some_value }}</p>
+        {% endif %}
+        {% if some_pars is defined %}
+        <p>Параметры: {{ some_pars }}</p>
+        {% endif %}
+    </div>
+</body>
+
+</html>

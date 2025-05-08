@@ -1,4 +1,7 @@
-#!/bin/bash
-gunicorn --bind 127.0.0.1:5000 wsgi:app & PID=$!
+gunicorn --bind 127.0.0.1:5000 app:app & APP_PID=$!
+sleep 20
+python3 client.py
+CLIENT_CODE=$?
 sleep 5
-kill -TERM $PID
+kill -TERM $APP_PID
+exit $CLIENT_CODE

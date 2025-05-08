@@ -1,7 +1,11 @@
 Flask
+gunicorn
+requests
+flask-bootstrap
+Flask-WTF
 Pillow
+tensorflow>=2.18.0
+keras
+lxml
 matplotlib
 numpy
-flask-wtf
-requests
-gunicorn

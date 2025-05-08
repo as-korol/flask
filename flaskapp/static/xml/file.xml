@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet type="text/xsl" href="file.xslt"?>
+<people>
+  <man id="1">
+    <name>Андрей</name>
+    <age>26</age>
+    <work>Программист</work>
+  </man>
+  <man id="2">
+    <name>Иван</name>
+    <age>40</age>
+    <work>Программист</work>
+  </man>
+</people>
