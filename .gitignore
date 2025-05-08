@@ -1,7 +1,7 @@
 /venv
 
-static/uploads/*
-!static/uploads/.gitkeep
+flaskapp/static/uploads/*
+!flaskapp/static/uploads/.gitkeep
 
-static/outputs/*
-!static/outputs/.gitkeep
+flaskapp/static/outputs/*
+!flaskapp/static/outputs/.gitkeep
