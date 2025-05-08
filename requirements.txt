@@ -1,0 +1,7 @@
+Flask
+Pillow
+matplotlib
+numpy
+flask-wtf
+requests
+gunicorn

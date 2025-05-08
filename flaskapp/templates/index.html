@@ -1,0 +1,19 @@
+{% extends "base.html" %}
+{% block content %}
+  <h1>Вариант 3: изменение яркости + гистограммы</h1>
+  <form method="post" enctype="multipart/form-data">
+    {{ form.csrf_token }}<br>
+    {{ form.image.label }} {{ form.image }}<br>
+    {{ form.level.label }} {{ form.level }}<br>
+    {{ form.recaptcha }}<br>
+    {{ form.submit }}
+  </form>
+  {% if orig %}
+    <h2>Исходное</h2>
+    <img src="{{ orig }}" width="200"><br>
+    <img src="{{ h1 }}" width="200"><br>
+    <h2>Результат</h2>
+    <img src="{{ out }}" width="200"><br>
+    <img src="{{ h2 }}" width="200"><br>
+  {% endif %}
+{% endblock %}

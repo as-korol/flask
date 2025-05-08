@@ -1,13 +1,10 @@
-cd /home/flask_brightness
-
-cat > .travis.yml << 'EOF'
 language: python
 python:
   - "3.11"
+before_install:
+  - chmod +x flaskapp/st.sh
 install:
-  - pip install Flask
+  - pip install Flask gunicorn requests
 script:
-  - python flaskapp/some_app.py & sleep 3 && pkill -f some_app.py
-EOF
-
-ls -la .travis.yml
+  - cd flaskapp
+  - ./st.sh
