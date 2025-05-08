@@ -10,8 +10,8 @@ from wtforms.validators import InputRequired, NumberRange
 app = Flask(__name__)
 app.config.update(
     SECRET_KEY='secret',
-    RECAPTCHA_PUBLIC_KEY='6LfhSDIrAAAAAEzcIf8NLNVpHNv48aBtwdhMMfNh',
-    RECAPTCHA_PRIVATE_KEY='6LfhSDIrAAAAAHttv2dtTt_61xhwgIJ8Kq0LmfJ-',
+    RECAPTCHA_PUBLIC_KEY='6LefSTIrAAAAADS-eIObBaDZzTweBxygSRsC5Pvg',
+    RECAPTCHA_PRIVATE_KEY='6LefSTIrAAAAAOfWkruoykjWN5n4dINe36K8Z6Zx',
     UPLOAD_FOLDER='../static/uploads',
     OUTPUT_FOLDER='../static/outputs'
 )
