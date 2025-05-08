@@ -1,0 +1,13 @@
+cd /home/flask_brightness
+
+cat > .travis.yml << 'EOF'
+language: python
+python:
+  - "3.11"
+install:
+  - pip install Flask
+script:
+  - python flaskapp/some_app.py & sleep 3 && pkill -f some_app.py
+EOF
+
+ls -la .travis.yml
